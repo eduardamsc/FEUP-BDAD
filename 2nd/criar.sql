@@ -147,7 +147,7 @@ numero INT PRIMARY KEY UNIQUE,
 
 			lotacaomax INT CHECK (lotacaomax > 0),
 
-			lotacaoatual INT CHECK (lotacaoatual >= 0),
+			lotacaoatual INT CHECK (lotacaoatual >= 0 AND lotacaoatual<=lotacaomax),
 
 			nomeGinasio STRING REFERENCES Ginasio (nome) NOT NULL);
 
@@ -161,14 +161,14 @@ numero INT PRIMARY KEY UNIQUE,
 
 			lotacaomax INT CHECK (lotacaomax > 0),
 
-			lotacaoatual INT CHECK (lotacaoatual >= 0),
+			lotacaoatual INT CHECK (lotacaoatual >= 0 AND lotacaoatual<=lotacaomax),
 			nomeGinasio STRING REFERENCES Ginasio (nome) NOT NULL);
 
 
 
 
 CREATE TABLE Modalidade (
-	nome STRING PRIMARY KEY NOT NULL,
+	nome STRING PRIMARY KEY UNIQUE NOT NULL,
 
 				idHorario INT REFERENCES Horario (id));
 
