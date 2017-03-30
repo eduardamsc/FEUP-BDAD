@@ -1,106 +1,215 @@
-.mode columns
+﻿.mode columns
+
 .headers on
+
 .nullvalue NULL
-PRAGMA foreign_keys = off;
+PRAGMA
+foreign_keys = off;
+
+
+
+
 
 DROP TABLE IF EXISTS Leciona;
+
 DROP TABLE IF EXISTS Equipamento;
+
 DROP TABLE IF EXISTS Contrato;
+
 DROP TABLE IF EXISTS Modalidade;
+
 DROP TABLE IF EXISTS Sala;
+
 DROP TABLE IF EXISTS Balneario;
+
 DROP TABLE IF EXISTS Ginasio;
+
 DROP TABLE IF EXISTS Horario;
+
 DROP TABLE IF EXISTS Treinador;
+
 DROP TABLE IF EXISTS Rececionista;
+
 DROP TABLE IF EXISTS Professor;
+
 DROP TABLE IF EXISTS Continuo;
+
 DROP TABLE IF EXISTS Gerente;
+
 DROP TABLE IF EXISTS Funcionario;
+
 DROP TABLE IF EXISTS Membro;
+
 DROP TABLE IF EXISTS Pessoa;
 
+
+
+
+
+
+
+
+
 CREATE TABLE Pessoa (
-			id INT PRIMARY KEY UNIQUE NOT NULL,
-			nome STRING,
-			idade INT,
-			BI INT,
-			contribuinte INT,
+	id INT PRIMARY KEY UNIQUE,
+
+			nome STRING NOT NULL,
+			idade INT CHECK (idade>=16),
+
+			BI INT CHECK (BI BETWEEN 10000000 AND 99999999),
+
+			contribuinte INT CHECK (contribuinte BETWEEN 100000000 AND 999999999),
+
 			morada STRING,
+
 			codigopostal STRING,
-			telemovel INT);
+
+			telemovel INT CHECK ((telemovel BETWEEN 910000000 AND 939999999) OR (telemovel BETWEEN 960000000 AND 969999999)));
+
+
+
 
 CREATE TABLE Membro (
-			idMembro INT PRIMARY KEY REFERENCES Pessoa (id) UNIQUE NOT NULL,
+	idMembro INT PRIMARY KEY REFERENCES Pessoa (id) UNIQUE,
+
 			ativo BOOLEAN);
 
+
+
+
 CREATE TABLE Funcionario (
-			idFuncionário INT REFERENCES Pessoa (id) PRIMARY KEY UNIQUE NOT NULL,
-			salario INT NOT NULL,
-			habilitacoes STRING);
+	idFuncionário INT REFERENCES Pessoa (id) PRIMARY KEY UNIQUE,
+
+				salario INT CHECK (salario>0),
+
+				habilitacoes STRING);
+
+
+
 
 CREATE TABLE Gerente (
-			idGerente INT PRIMARY KEY REFERENCES Funcionario (idFuncionário) UNIQUE NOT NULL);
+	idGerente INT PRIMARY KEY REFERENCES Funcionario (idFuncionário) UNIQUE);
+
+
+
 
 CREATE TABLE Continuo (
-			idContinuo INT PRIMARY KEY REFERENCES Funcionario (idFuncionário) UNIQUE NOT NULL);
+	idContinuo INT PRIMARY KEY REFERENCES Funcionario (idFuncionário) UNIQUE);
+
+
+
 
 CREATE TABLE Professor (
-			idProfessor INT REFERENCES Funcionario (idFuncionário) PRIMARY KEY UNIQUE NOT NULL);
+idProfessor INT REFERENCES Funcionario (idFuncionário) PRIMARY KEY UNIQUE);
+
+
+
 
 CREATE TABLE Rececionista (
-			idTreinador INT PRIMARY KEY REFERENCES Funcionario (idFuncionário) UNIQUE NOT NULL);
+idTreinador INT PRIMARY KEY REFERENCES Funcionario (idFuncionário) UNIQUE);
+
+
+
 
 CREATE TABLE Treinador (
-			idTreinador INT PRIMARY KEY REFERENCES Funcionario (idFuncionário) UNIQUE NOT NULL);
+idTreinador INT PRIMARY KEY REFERENCES Funcionario (idFuncionário) UNIQUE);
 
-CREATE TABLE Horario (	
-			id INT PRIMARY KEY UNIQUE NOT NULL,
+
+
+
+CREATE TABLE Horario (	id INT PRIMARY KEY UNIQUE,
+
 			inicio DATETIME NOT NULL,
+
 			fim DATETIME NOT NULL,
-			dia DATE);
+
+			dia DATE NOT NULL);
+
+
+
 
 CREATE TABLE Ginasio (	
-			nome STRING PRIMARY KEY UNIQUE NOT NULL,
+nome STRING PRIMARY KEY UNIQUE NOT NULL,
+
 			morada STRING,
+
 			codigopostal STRING,
-			telefone INT);
+
+			telefone INT CHECK (telefone BETWEEN 200000000 AND 299999999));
+
+
+
 
 CREATE TABLE Balneario (
-			numero INT PRIMARY KEY UNIQUE NOT NULL,
-			genero STRING,
-			lotacaomax INT,
-			lotacaoatual INT,
-			nomeGinasio STRING REFERENCES Ginasio (nome));
+numero INT PRIMARY KEY UNIQUE,
 
-CREATE TABLE Sala (
-			numero INT PRIMARY KEY UNIQUE NOT NULL,
-			dimensao INT,
-			lotacaomax INT,
-			lotacaoatual INT,
+			genero STRING CHECK (genero IN ('masculino', 'feminino'));,
+
+			lotacaomax INT CHECK (lotacaomax > 0),
+
+			lotacaoatual INT CHECK (lotacaoatual >= 0),
+
 			nomeGinasio STRING REFERENCES Ginasio (nome) NOT NULL);
 
+
+
+
+CREATE TABLE Sala (	
+numero INT PRIMARY KEY UNIQUE,
+
+			dimensao INT CHECK (dimensao > 0),
+
+			lotacaomax INT CHECK (lotacaomax > 0),
+
+			lotacaoatual INT CHECK (lotacaoatual >= 0),
+			nomeGinasio STRING REFERENCES Ginasio (nome) NOT NULL);
+
+
+
+
 CREATE TABLE Modalidade (
-			nome STRING PRIMARY KEY NOT NULL,
-			idHorario INT REFERENCES Horario (id));
+	nome STRING PRIMARY KEY NOT NULL,
+
+				idHorario INT REFERENCES Horario (id));
+
+
+
 
 CREATE TABLE Contrato (
-			idMembro INT PRIMARY KEY REFERENCES Membro (idMembro) NOT NULL,
-			pagamento INT NOT NULL,
+	idMembro INT PRIMARY KEY REFERENCES Membro (idMembro) NOT NULL,
+
+			pagamento INT CHECK (pagamento>0),
+
 			regime STRING NOT NULL,
+
 			idHorario INT REFERENCES Horario (id) NOT NULL);
 
+
+
+
 CREATE TABLE Equipamento (
-			id INT PRIMARY KEY UNIQUE NOT NULL,
-			nome STRING,
-			funcionalidade STRING,
-			disponivel BOOLEAN NOT NULL,
-			numeroSala INT REFERENCES Sala (numero));
+	id INT PRIMARY KEY UNIQUE,
+	
+			nome STRING NOT NULL,
+
+				funcionalidade STRING,
+
+				disponivel BOOLEAN,
+
+				numeroSala INT REFERENCES Sala (numero));
+
+
+
 
 CREATE TABLE Leciona (
-			nomeModalidade STRING REFERENCES Modalidade (nome),
+	nomeModalidade STRING REFERENCES Modalidade (nome),
+
 			idProfessor INT PRIMARY KEY REFERENCES Professor (idProfessor));
 
 
+
+
+
 COMMIT TRANSACTION;
+
 PRAGMA foreign_keys = on;
