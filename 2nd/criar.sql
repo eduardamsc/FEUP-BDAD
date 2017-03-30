@@ -180,7 +180,7 @@ CREATE TABLE Contrato (
 
 			pagamento INT CHECK (pagamento>0),
 
-			regime STRING NOT NULL,
+			regime STRING CHEKC (regime IN ('pontual','mensal','anual')),
 
 			idHorario INT REFERENCES Horario (id) NOT NULL);
 
