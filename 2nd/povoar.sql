@@ -1,0 +1,10 @@
+insert into Pessoa (id, nome, idade, BI, contribuinte, morada, codigopostal, telemovel) values (1, ‘Madalena Joao’, 19, 15534217, 223415876, ‘Rua do Carmo’, ’1200-094’, 913247754);
+insert into Pessoa (id, nome, idade, BI, contribuinte, morada, codigopostal, telemovel) values (2, ‘Erica Pereira’, 23, 14232819, 231594532, ‘Rua Cidade de Bolava’, ‘1800-079’, 963155251);
+insert into Pessoa (id, nome, idade, BI, contribuinte, morada, codigopostal, telemovel) values (3, ‘Ricardo Marques’, 45, 12283197, 241892098, ‘Rua Garret’, ‘1200-309’, 923164589);
+insert into Pessoa (id, nome, idade, BI, contribuinte, morada, codigopostal, telemovel) values (4, 'Bruno Florencio’, 31, 15327389, 287340117, ‘Rua Herois de Quionga', ’1170-178’, 932874912);
+insert into Pessoa (id, nome, idade, BI, contribuinte, morada, codigopostal, telemovel) values (5, 'Amanda Goncales’, 34, 12437823, 274835163, ‘Rua da Madalena’, ‘1100-318’, 924121784);
+insert into Pessoa (id, nome, idade, BI, contribuinte, morada, codigopostal, telemovel) values (6, 'Dora Carpinteira’, 27, 13243267, 234342118, ‘Rua da Oliveira ao Carmo’, ‘1200-309’, 932850038);
+insert into Pessoa (id, nome, idade, BI, contribuinte, morada, codigopostal, telemovel) values (7, ‘Fernando Branco’, 17, 13894583, 237846195, ‘Rua da Prata’, ’1149-057’, 91897345227);
+insert into Pessoa (id, nome, idade, BI, contribuinte, morada, codigopostal, telemovel) values (8, ‘Justino Mendes’, 53, 12145312, 212359340, ‘Rua Roberto Duarte Silva’, null, 938957822);
+insert into Pessoa (id, nome, idade, BI, contribuinte, morada, codigopostal, telemovel) values (9, ‘Judite Peixoto’, 26, 12354389, 223435321, ‘Rua dos Fanqueiros’, ’1100-226’, 923489784);
+insert into Pessoa (id, nome, idade, BI, contribuinte, morada, codigopostal, telemovel) values (10, ‘Catarina Paiva’, 32, 15243842, 284672005, ‘Rua Ferreira Lapa’, ’1150-154’, 965348923);
