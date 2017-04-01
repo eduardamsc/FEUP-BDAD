@@ -1,4 +1,4 @@
-﻿.mode columns
+.mode columns
 
 .headers on
 
@@ -123,7 +123,7 @@ CREATE TABLE Horario (	id INT PRIMARY KEY UNIQUE,
 
 			fim DATETIME NOT NULL,
 
-			dia DATE NOT NULL);
+			dia STRING NOT NULL);
 
 
 
@@ -170,7 +170,8 @@ numero INT PRIMARY KEY UNIQUE,
 CREATE TABLE Modalidade (
 	nome STRING PRIMARY KEY UNIQUE NOT NULL,
 
-				idHorario INT REFERENCES Horario (id));
+				idHorario INT REFERENCES Horario (id),
+				numeroSala INT REFERENCES Sala (numero));
 
 
 
@@ -180,7 +181,7 @@ CREATE TABLE Contrato (
 
 			pagamento INT CHECK (pagamento>0),
 
-			regime STRING CHEKC (regime IN ('pontual','mensal','anual')),
+			regime STRING CHEKC (regime IN ('mensal','anual')),
 
 			idHorario INT REFERENCES Horario (id) NOT NULL);
 
