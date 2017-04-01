@@ -3,8 +3,7 @@
 .headers on
 
 .nullvalue NULL
-PRAGMA
-foreign_keys = off;
+PRAGMA foreign_keys = ON;
 
 
 DROP TABLE IF EXISTS Leciona;
