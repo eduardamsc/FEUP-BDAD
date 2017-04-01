@@ -25,7 +25,7 @@ insert into Funcionario (idFuncionario, salary, habilitacoes) values (7, 900, �
 insert into Funcionario (idFuncionario, salary, habilitacoes) values (8, 1500, ‘Curso Profissional em Zumba’);
 insert into Funcionario (idFuncionario, salary, habilitacoes) values (9, 1500, ‘Mestrado em Bike Classes’);
 insert into Funcionario (idFuncionario, salary, habilitacoes) values (10, 1500, ‘Licenciatura em Teorias de Zumba’);
-insert into Funcionario (idFuncionario, salary, habilitacoes) values (11, 1000, ‘Licenciatura em Body Pump’);
+insert into Funcionario (idFuncionario, salary, habilitacoes) values (11, 1000, ‘Licenciatura em Body Training’);
 insert into Funcionario (idFuncionario, salary, habilitacoes) values (12, 1000, ‘Licenciatura em Receber’);
 insert into Funcionario (idFuncionario, salary, habilitacoes) values (13, 1500, ‘9º ano’);
 insert into Funcionario (idFuncionario, salary, habilitacoes) values (14, 1800, ‘Licenciatura em Saber Treinar’);
@@ -63,34 +63,32 @@ insert into Ginasio (nome, morada, codigopostal,telefone) values (Blue Gym, Rua 
 insert into Ginasio (nome, morada, codigopostal,telefone) values (Best Gym, Travessa Santos Flores, 4300-123, 221432311);
 insert into Ginasio (nome, morada, codigopostal,telefone) values (The Gym, Rua Cesar Vieira, 4300-153, 212345172);
 
-insert into Balnearia (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, Masculino, 15, 12,Grifo);
-insert into Balnearia (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, Feminino, 15, 10,Grifo);
-insert into Balnearia (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, Masculino, 12, 5,Fashion Gym);
-insert into Balnearia (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, Feminino, 12, 3,Fashion Gym);
-insert into Balnearia (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, Masculino, 10, 9,Blue Gym);
-insert into Balnearia (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, Feminino, 10, 6,Blue Gym);
-insert into Balnearia (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, Masculino, 20, 15,Best Gym);
-insert into Balnearia (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, Feminino, 20, 12,Best Gym);
-insert into Balnearia (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, Masculino, 15, 10,The Gym);
-insert into Balnearia (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, Feminino, 15, 11,The Gym);
+insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, ‘Masculino’, 15, 12, ’Grifo’);
+insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, ‘Feminino’, 15, 10, ’Grifo’);
+insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, ‘Masculino’, 12, 5, ‘Fashion Gym’);
+insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, ‘Feminino’, 12, 3, ‘Fashion Gym’);
+insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, ‘Masculino’, 10, 9, ‘Blue Gym’);
+insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, ‘Feminino’, 10, 6, ‘Blue Gym’);
+insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, ‘Masculino’, 20, 15, ‘Best Gym’);
+insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, ‘Feminino’, 20, 12, ’Best Gym’);
+insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, ‘Masculino’, 15, 10, ’The Gym’);
+insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, ’Feminino’, 15, 11, ’The Gym’);
 
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 100, 15, 12,Grifo);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (2, 50, 15, 10,Grifo);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 90, 12, 3,Fashion Gym);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 90, 10, 9,Blue Gym);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 150, 20, 15,Best Gym);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (2, 80, 20, 12,Best Gym);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 120, 15, 10,The Gym);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (2, 50, 15, 11,The Gym);
+insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 100, 15, 12, ’Grifo’);
+insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (2, 50, 15, 10, ‘Grifo’);
+insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 90, 12, 3, ‘Fashion Gym’);
+insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 90, 10, 9, ‘Blue Gym’);
+insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 150, 20, 15, ‘Best Gym’);
+insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (2, 80, 20, 12, ‘Best Gym’);
+insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 120, 15, 10, ‘The Gym’);
+insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (2, 50, 15, 11, ‘The Gym’);
 
-insert into Modalidade(nome,idHorario) values (Treino de Resistencia, 6);
-insert into Modalidade(nome,idHorario) values (Treino de Resistencia, 7);
-insert into Modalidade(nome,idHorario) values (Treino de Resistencia, 8);
+insert into Modalidade(nome,idHorario) values (Zumba, 1);
+insert into Modalidade(nome,idHorario) values (Zumba, 2);
+insert into Modalidade(nome,idHorario) values (Zumba, 3);
+insert into Modalidade(nome,idHorario) values (Body Training, 4);
+insert into Modalidade(nome,idHorario) values (Body Training, 5);
 insert into Modalidade(nome,idHorario) values (Body Training, 1);
-insert into Modalidade(nome,idHorario) values (Cycling, 4);
-insert into Modalidade(nome,idHorario) values (Karate, 2);
-insert into Modalidade(nome,idHorario) values (Local, 5);
-insert into Modalidade(nome,idHorario) values (Body Toning, 3);
 
 insert into Contrato (idMembro, pagamento, regime, idHorario) values (1, 30, mensal, 6);
 insert into Contrato (idMembro, pagamento, regime, idHorario) values (2, 50, mensal, 7);

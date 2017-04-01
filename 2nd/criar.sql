@@ -143,7 +143,7 @@ nome STRING PRIMARY KEY UNIQUE NOT NULL,
 CREATE TABLE Balneario (
 numero INT PRIMARY KEY UNIQUE,
 
-			genero STRING CHECK (genero IN ('masculino', 'feminino'));,
+			genero STRING CHECK (genero IN (‘Masculino', ‘Feminino'));,
 
 			lotacaomax INT CHECK (lotacaomax > 0),
 
