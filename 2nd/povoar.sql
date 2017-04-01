@@ -23,7 +23,7 @@ insert into Funcionario (idFuncionario, salary, habilitacoes) values (5, 2500, �
 insert into Funcionario (idFuncionario, salary, habilitacoes) values (6, 900, ‘Licenciatura em Artes da Limpeza’);
 insert into Funcionario (idFuncionario, salary, habilitacoes) values (7, 900, ‘Ensino Secundario’);
 insert into Funcionario (idFuncionario, salary, habilitacoes) values (8, 1500, ‘Curso Profissional em Zumba’);
-insert into Funcionario (idFuncionario, salary, habilitacoes) values (9, 1500, ‘Mestrado em Bike Classes’);
+insert into Funcionario (idFuncionario, salary, habilitacoes) values (9, 1500, ‘Mestrado em Conduzindo a Bicicleta’);
 insert into Funcionario (idFuncionario, salary, habilitacoes) values (10, 1500, ‘Licenciatura em Teorias de Zumba’);
 insert into Funcionario (idFuncionario, salary, habilitacoes) values (11, 1000, ‘Licenciatura em Body Training’);
 insert into Funcionario (idFuncionario, salary, habilitacoes) values (12, 1000, ‘Licenciatura em Receber’);
@@ -32,21 +32,21 @@ insert into Funcionario (idFuncionario, salary, habilitacoes) values (14, 1800, 
 insert into Funcionario (idFuncionario, salary, habilitacoes) values (15, 1800, ‘Curso profissional em Artes do Treinamento Acompanhado’);
 
 insert into Gerente (idGerente) values (4);
-insert into Gerente (idGerente, salary, habilitacoes) values (5);
+insert into Gerente (idGerente) values (5);
 
-insert into Continuo (idContinuo, salary, habilitacoes) values (6);
-insert into Continuo (idContinuo, salary, habilitacoes) values (7);
+insert into Continuo (idContinuo) values (6);
+insert into Continuo (idContinuo) values (7);
 
-insert into Professor (idProfessor, salary, habilitacoes) values (8);
-insert into Professor (idProfessor, salary, habilitacoes) values (9);
-insert into Professor (idProfessor, salary, habilitacoes) values (10);
-insert into Professor (idProfessor, salary, habilitacoes) values (11);
+insert into Professor (idProfessor) values (8);
+insert into Professor (idProfessor) values (9);
+insert into Professor (idProfessor) values (10);
+insert into Professor (idProfessor) values (11);
 
-insert into Rececionista (idRececionista, salary, habilitacoes) values (12);
-insert into Rececionista (idRececionista, salary, habilitacoes) values (13);
+insert into Rececionista (idRececionista) values (12);
+insert into Rececionista (idRececionista) values (13);
 
-insert into Treinador (idTreinador, salary, habilitacoes) values (14);
-insert into Treinador (idTreinador, salary, habilitacoes) values (15);
+insert into Treinador (idTreinador) values (14);
+insert into Treinador (idTreinador) values (15);
 
 insert into Horario (id, inicio, fim, dia) values (1, ’9h’, ’11h’, ’Segunda’);
 insert into Horario (id, inicio, fim, dia) values (2, ’9h’, ’11h’, ’Quarta’);
@@ -60,8 +60,6 @@ insert into Horario (id, inicio, fim, dia) values (8, ’9h’, ’22h’, ’Se
 insert into Ginasio (nome, morada, codigopostal,telefone) values (Grifo, Travessa S. Pedro, 4400-306, 223445839);
 insert into Ginasio (nome, morada, codigopostal,telefone) values (Fashion Gym, Rua St. Carlos, 4200-423, 227435132);
 insert into Ginasio (nome, morada, codigopostal,telefone) values (Blue Gym, Rua Pedro Alves, 4400-596, 221643129);
-insert into Ginasio (nome, morada, codigopostal,telefone) values (Best Gym, Travessa Santos Flores, 4300-123, 221432311);
-insert into Ginasio (nome, morada, codigopostal,telefone) values (The Gym, Rua Cesar Vieira, 4300-153, 212345172);
 
 insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, ‘Masculino’, 15, 12, ’Grifo’);
 insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, ‘Feminino’, 15, 10, ’Grifo’);
@@ -69,30 +67,41 @@ insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) valu
 insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, ‘Feminino’, 12, 3, ‘Fashion Gym’);
 insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, ‘Masculino’, 10, 9, ‘Blue Gym’);
 insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, ‘Feminino’, 10, 6, ‘Blue Gym’);
-insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, ‘Masculino’, 20, 15, ‘Best Gym’);
-insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, ‘Feminino’, 20, 12, ’Best Gym’);
-insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, ‘Masculino’, 15, 10, ’The Gym’);
-insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, ’Feminino’, 15, 11, ’The Gym’);
 
 insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 100, 15, 12, ’Grifo’);
 insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (2, 50, 15, 10, ‘Grifo’);
 insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 90, 12, 3, ‘Fashion Gym’);
+insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (2, 90, 12, 5, ‘Fashion Gym’);
+insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (3, 90, 12, 0, ‘Fashion Gym’);
 insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 90, 10, 9, ‘Blue Gym’);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 150, 20, 15, ‘Best Gym’);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (2, 80, 20, 12, ‘Best Gym’);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 120, 15, 10, ‘The Gym’);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (2, 50, 15, 11, ‘The Gym’);
 
-insert into Modalidade(nome,idHorario) values (Zumba, 1);
-insert into Modalidade(nome,idHorario) values (Zumba, 2);
-insert into Modalidade(nome,idHorario) values (Zumba, 3);
-insert into Modalidade(nome,idHorario) values (Body Training, 4);
-insert into Modalidade(nome,idHorario) values (Body Training, 5);
-insert into Modalidade(nome,idHorario) values (Body Training, 1);
+insert into Modalidade(nome,idHorario) values (‘Zumba’, 1);
+insert into Modalidade(nome,idHorario) values (‘Zumba’, 2);
+insert into Modalidade(nome,idHorario) values (‘Zumba’, 3);
+insert into Modalidade(nome,idHorario) values (‘Body Training’, 4);
+insert into Modalidade(nome,idHorario) values (‘Body Training’, 5);
+insert into Modalidade(nome,idHorario) values (‘Body Training’, 1);
 
-insert into Contrato (idMembro, pagamento, regime, idHorario) values (1, 30, mensal, 6);
-insert into Contrato (idMembro, pagamento, regime, idHorario) values (2, 50, mensal, 7);
-insert into Contrato (idMembro, pagamento, regime, idHorario) values (3, 840, anual, 8);
+insert into Contrato (idMembro, pagamento, regime, idHorario) values (1, 30, ‘mensal’, 6);
+insert into Contrato (idMembro, pagamento, regime, idHorario) values (2, 50, ‘mensal’, 7);
+insert into Contrato (idMembro, pagamento, regime, idHorario) values (3, 840, ‘anual’, 8);
 
-EQUIPAMENTO
-LECIONA
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (1, ‘passadeira’, ‘esculpir pernas; aumentar resistencia’, false, 1, ‘Grifo’);
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (2, ‘passadeira’, ‘esculpir pernas; aumentar resistencia’, true, 1, ‘Grifo’);
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (3, ‘passadeira’, ‘esculpir pernas; aumentar resistencia’, true, 1, ‘Fashion Gym’);
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (4, ‘passadeira’, ‘esculpir pernas; aumentar resistencia’, true, 1, ‘Fashion Gym’);
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (5, ‘passadeira’, ‘esculpir pernas; aumentar resistencia’, true, 3, ‘Fashion Gym’);
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (6, ‘passadeira’, ‘esculpir pernas; aumentar resistencia’, false, 1, ‘Blue Gym’);
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (7, ‘eliptica’, ‘esculpir pernas’, true, 2, ‘Grifo’);
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (8, ‘eliptica’, ‘esculpir pernas’, false, 2, ‘Grifo’);
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (9, ‘eliptica’, ‘esculpir pernas’, true, 2, ‘Grifo’);
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (10, ‘eliptica’, ‘esculpir pernas’, true, 2, ‘Fashion Gym’);
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (11, ‘eliptica’, ‘esculpir pernas’, true, 2, ‘Fashion Gym’);
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (12, ‘eliptica’, ‘esculpir pernas’, true, 1, ‘Blue Gym’);
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (13, ‘eliptica’, ‘esculpir pernas’, true, 1, ‘Blue Gym’);
+insert into Equipamento (id, nome, funcionalidade, disponível, numeroSala) values (14, ‘eliptica’, ‘esculpir pernas’, true, 1, ‘Blue Gym’);
+
+insert into Leciona (nomeModalidade, idProfessor) values (‘Zumba’,8);
+insert into Leciona (nomeModalidade, idProfessor) values (‘Zumba’,10);
+insert into Leciona (nomeModalidade, idProfessor) values (‘Soul Cycle’, 9);
+insert into Leciona (nomeModalidade, idProfessor) values (‘Body Training’, 11);

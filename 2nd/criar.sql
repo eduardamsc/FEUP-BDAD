@@ -7,9 +7,6 @@ PRAGMA
 foreign_keys = off;
 
 
-
-
-
 DROP TABLE IF EXISTS Leciona;
 
 DROP TABLE IF EXISTS Equipamento;
@@ -41,12 +38,6 @@ DROP TABLE IF EXISTS Funcionario;
 DROP TABLE IF EXISTS Membro;
 
 DROP TABLE IF EXISTS Pessoa;
-
-
-
-
-
-
 
 
 
