@@ -68,7 +68,7 @@ CREATE TABLE Ginasio (
 CREATE TABLE Balneario (
 			numero INT,
 			nomeGinasio STRING REFERENCES Ginasio (nome) NOT NULL,
-			genero STRING CHECK (genero IN (‘masculino', ‘feminino')),
+			genero STRING CHECK (genero IN ('masculino', 'feminino')),
 			lotacaomax INT CHECK (lotacaomax > 0),
 			lotacaoatual INT CHECK (lotacaoatual >= 0 AND lotacaoatual<=lotacaomax),
 			PRIMARY KEY(numero, nomeGinasio));
