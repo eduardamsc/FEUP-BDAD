@@ -19,8 +19,9 @@ DROP TABLE IF EXISTS Contrato;
 DROP TABLE IF EXISTS Equipamento;
 DROP TABLE IF EXISTS Leciona;
 
+
 CREATE TABLE Pessoa (
-			id INT PRIMARY KEY UNIQUE,
+			id INT PRIMARY KEY,
 			nome STRING NOT NULL,
 			idade INT CHECK (idade>=16),
 			BI INT CHECK (BI BETWEEN 10000000 AND 99999999),
@@ -60,7 +61,7 @@ CREATE TABLE Horario (
 			dia STRING NOT NULL);
 
 CREATE TABLE Ginasio (	
-			nome STRING PRIMARY KEY UNIQUE NOT NULL,
+			nome STRING PRIMARY KEY NOT NULL,
 			morada STRING,
 			codigopostal STRING,
 			telefone INT CHECK (telefone BETWEEN 200000000 AND 299999999));
@@ -84,7 +85,8 @@ CREATE TABLE Sala (
 CREATE TABLE Modalidade (
 			nome STRING PRIMARY KEY UNIQUE NOT NULL,
 			idHorario INT REFERENCES Horario (id),
-			numeroSala INT REFERENCES Sala (numero));
+			numeroSala INT REFERENCES Sala (numero),
+			nomeGinasio STRING REFERENCES Ginasio (nome));
 
 CREATE TABLE Contrato (
 			idMembro INT PRIMARY KEY REFERENCES Membro (idMembro) NOT NULL,
@@ -97,7 +99,8 @@ CREATE TABLE Equipamento (
 			nome STRING NOT NULL,
 			funcionalidade STRING,
 			disponivel BOOLEAN,
-			numeroSala INT REFERENCES Sala (numero));
+			numeroSala INT REFERENCES Sala (numero),
+			nomeGinasio STRING REFERENCES Ginasio (nome));
 
 CREATE TABLE Leciona (
 			nomeModalidade STRING REFERENCES Modalidade (nome),
