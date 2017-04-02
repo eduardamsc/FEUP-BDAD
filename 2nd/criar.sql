@@ -66,15 +66,15 @@ CREATE TABLE Ginasio (
 			telefone INT CHECK (telefone BETWEEN 200000000 AND 299999999));
 
 CREATE TABLE Balneario (
-			numero INT PRIMARY KEY UNIQUE,
+			numero INT UNIQUE,
 			nomeGinasio STRING REFERENCES Ginasio (nome) NOT NULL,
-			genero STRING CHECK (genero IN (‘Masculino', ‘Feminino')),
+			genero STRING CHECK (genero IN ("Masculino", "Feminino")),
 			lotacaomax INT CHECK (lotacaomax > 0),
 			lotacaoatual INT CHECK (lotacaoatual >= 0 AND lotacaoatual<=lotacaomax),
 			PRIMARY KEY(numero, nomeGinasio));
 
 CREATE TABLE Sala (	
-			numero INT PRIMARY KEY UNIQUE,
+			numero INT UNIQUE,
 			nomeGinasio STRING REFERENCES Ginasio (nome) NOT NULL,
 			dimensao INT CHECK (dimensao > 0),
 			lotacaomax INT CHECK (lotacaomax > 0),
@@ -89,15 +89,16 @@ CREATE TABLE Modalidade (
 CREATE TABLE Contrato (
 			idMembro INT PRIMARY KEY REFERENCES Membro (idMembro) NOT NULL,
 			pagamento INT CHECK (pagamento>0),
-			regime STRING CHEKC (regime IN ('mensal','anual')),
+			regime STRING CHECK (regime IN ('mensal','anual')),
 			idHorario INT REFERENCES Horario (id) NOT NULL);
 
 CREATE TABLE Equipamento (
-			id INT PRIMARY KEY UNIQUE,
+			id INT UNIQUE,
 			nome STRING NOT NULL,
 			funcionalidade STRING,
 			disponivel BOOLEAN,
-			numeroSala INT REFERENCES Sala (numero));
+			numeroSala INT REFERENCES Sala (numero)
+			PRIMARY KEY(id, numeroSala));
 
 CREATE TABLE Leciona (
 			nomeModalidade STRING REFERENCES Modalidade (nome),
