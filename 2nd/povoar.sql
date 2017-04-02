@@ -61,19 +61,19 @@ insert into Ginasio (nome, morada, codigopostal,telefone) values (Grifo, Travess
 insert into Ginasio (nome, morada, codigopostal,telefone) values (Fashion Gym, Rua St. Carlos, 4200-423, 227435132);
 insert into Ginasio (nome, morada, codigopostal,telefone) values (Blue Gym, Rua Pedro Alves, 4400-596, 221643129);
 
-insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, ‘Masculino’, 15, 12, ’Grifo’);
-insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, ‘Feminino’, 15, 10, ’Grifo’);
-insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, ‘Masculino’, 12, 5, ‘Fashion Gym’);
-insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, ‘Feminino’, 12, 3, ‘Fashion Gym’);
-insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (1, ‘Masculino’, 10, 9, ‘Blue Gym’);
-insert into Balneario (numero, genero, lotacaomax,lotacaoatual,nomeGinasio) values (2, ‘Feminino’, 10, 6, ‘Blue Gym’);
+insert into Balneario (numero, nomeGinasio, genero, lotacaomax,lotacaoatual) values (1, ’Grifo’, ‘Masculino’, 15, 12);
+insert into Balneario (numero, nomeGinasio, genero, lotacaomax,lotacaoatual) values (2, ’Grifo’, ‘Feminino’, 15, 10);
+insert into Balneario (numero, nomeGinasio, genero, lotacaomax,lotacaoatual) values (1, ‘Fashion Gym’, ‘Masculino’, 12, 5);
+insert into Balneario (numero, nomeGinasio, genero, lotacaomax,lotacaoatual) values (2, ‘Fashion Gym’, ‘Feminino’, 12, 3);
+insert into Balneario (numero, nomeGinasio, genero, lotacaomax,lotacaoatual) values (1, ‘Blue Gym’, ‘Masculino’, 10, 9);
+insert into Balneario (numero, nomeGinasio, genero, lotacaomax,lotacaoatual) values (2, ‘Blue Gym’, ‘Feminino’, 10, 6);
 
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 100, 15, 12, ’Grifo’);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (2, 50, 15, 10, ‘Grifo’);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 90, 12, 3, ‘Fashion Gym’);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (2, 90, 12, 5, ‘Fashion Gym’);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (3, 90, 12, 0, ‘Fashion Gym’);
-insert into Sala (numero, dimensao, lotacaomax,lotacaoatual,nomeGinasio) values (1, 90, 10, 9, ‘Blue Gym’);
+insert into Sala (numero, nomeGinasio, dimensao, lotacaomax,lotacaoatual) values (1, ’Grifo’, 100, 15, 12);
+insert into Sala (numero, nomeGinasio, dimensao, lotacaomax,lotacaoatual) values (2, ’Grifo’, 50, 15, 10);
+insert into Sala (numero, nomeGinasio, dimensao, lotacaomax,lotacaoatual) values (1, ‘Fashion Gym’, 90, 12, 3);
+insert into Sala (numero, nomeGinasio, dimensao, lotacaomax,lotacaoatual) values (2, ‘Fashion Gym’, 90, 12, 5);
+insert into Sala (numero, nomeGinasio, dimensao, lotacaomax,lotacaoatual) values (3, ‘Fashion Gym’, 90, 12, 0);
+insert into Sala (numero, nomeGinasio, dimensao, lotacaomax,lotacaoatual) values (1, ‘Blue Gym’, 90, 10, 9);
 
 insert into Modalidade(nome,idHorario) values (‘Zumba’, 1);
 insert into Modalidade(nome,idHorario) values (‘Zumba’, 2);

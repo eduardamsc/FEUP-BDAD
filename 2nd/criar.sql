@@ -132,27 +132,28 @@ nome STRING PRIMARY KEY UNIQUE NOT NULL,
 
 CREATE TABLE Balneario (
 numero INT PRIMARY KEY UNIQUE,
+			nomeGinasio STRING REFERENCES Ginasio (nome) NOT NULL,
 
 			genero STRING CHECK (genero IN (‘Masculino', ‘Feminino'));,
 
 			lotacaomax INT CHECK (lotacaomax > 0),
 
 			lotacaoatual INT CHECK (lotacaoatual >= 0 AND lotacaoatual<=lotacaomax),
-
-			nomeGinasio STRING REFERENCES Ginasio (nome) NOT NULL);
+			PRIMARY KEY(1,2));
 
 
 
 
 CREATE TABLE Sala (	
 numero INT PRIMARY KEY UNIQUE,
+			nomeGinasio STRING REFERENCES Ginasio (nome) NOT NULL,
 
 			dimensao INT CHECK (dimensao > 0),
 
 			lotacaomax INT CHECK (lotacaomax > 0),
 
 			lotacaoatual INT CHECK (lotacaoatual >= 0 AND lotacaoatual<=lotacaomax),
-			nomeGinasio STRING REFERENCES Ginasio (nome) NOT NULL);
+			PRIMARY KEY(1,2));
 
 
 
