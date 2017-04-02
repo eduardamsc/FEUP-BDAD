@@ -82,28 +82,40 @@ INSERT INTO Modalidade VALUES ('Zumba', 92, 201, 'Grifo');
 INSERT INTO Modalidade VALUES ('Zumba', 93, 201, 'Grifo');
 INSERT INTO Modalidade VALUES ('Body Training', 94, 201, 'Grifo');
 INSERT INTO Modalidade VALUES ('Body Training', 95, 202, 'Grifo');
-INSERT INTO Modalidade VALUES ('Body Training', 91, 202, 'Grifo');
 
-INSERT INTO Contrato VALUES (1, 30, 'mensal', 96);
-INSERT INTO Contrato VALUES (2, 50, 'mensal', 97);
-INSERT INTO Contrato VALUES (3, 840, 'anual', 98);
+INSERT INTO Modalidade VALUES ('Zumba', 91, 201, 'Fashion Gym');
+INSERT INTO Modalidade VALUES ('Zumba', 92, 203, 'Fashion Gym');
+INSERT INTO Modalidade VALUES ('Zumba', 93, 202, 'Fashion Gym');
+INSERT INTO Modalidade VALUES ('Body Training', 94, 201, 'Fashion Gym');
+INSERT INTO Modalidade VALUES ('Body Training', 95, 202, 'Fashion Gym');
 
-INSERT INTO Equipamento VALUES (1, 'passadeira', 'esculpir pernas; aumentar resistencia', 'false', 1, 'Grifo');
-INSERT INTO Equipamento VALUES (2, 'passadeira', 'esculpir pernas; aumentar resistencia', 'true', 1, 'Grifo');
-INSERT INTO Equipamento VALUES (3, 'passadeira', 'esculpir pernas; aumentar resistencia', 'true', 1, 'Fashion Gym');
-INSERT INTO Equipamento VALUES (4, 'passadeira', 'esculpir pernas; aumentar resistencia', 'true', 1, 'Fashion Gym');
-INSERT INTO Equipamento VALUES (5, 'passadeira', 'esculpir pernas; aumentar resistencia', 'true', 3, 'Fashion Gym');
-INSERT INTO Equipamento VALUES (6, 'passadeira', 'esculpir pernas; aumentar resistencia', 'false', 1, 'Blue Gym');
-INSERT INTO Equipamento VALUES (7, 'eliptica', 'esculpir pernas', 'true', 2, 'Grifo');
-INSERT INTO Equipamento VALUES (8, 'eliptica', 'esculpir pernas', 'false', 2, 'Grifo');
-INSERT INTO Equipamento VALUES (9, 'eliptica', 'esculpir pernas', 'true', 2, 'Grifo');
-INSERT INTO Equipamento VALUES (10, 'eliptica', 'esculpir pernas', 'true', 2, 'Fashion Gym');
-INSERT INTO Equipamento VALUES (11, 'eliptica', 'esculpir pernas', 'true', 2, 'Fashion Gym');
-INSERT INTO Equipamento VALUES (12, 'eliptica', 'esculpir pernas', 'true', 1, 'Blue Gym');
-INSERT INTO Equipamento VALUES (13, 'eliptica', 'esculpir pernas', 'true', 1, 'Blue Gym');
-INSERT INTO Equipamento VALUES (14, 'eliptica', 'esculpir pernas', 'true', 1, 'Blue Gym');
+INSERT INTO Modalidade VALUES ('Zumba', 91, 201, 'Blue Gym');
+INSERT INTO Modalidade VALUES ('Zumba', 92, 201, 'Blue Gym');
+INSERT INTO Modalidade VALUES ('Zumba', 93, 201, 'Blue Gym');
+INSERT INTO Modalidade VALUES ('Body Training', 94, 201, 'Blue Gym');
+INSERT INTO Modalidade VALUES ('Body Training', 95, 201, 'Blue Gym');
 
-INSERT INTO Leciona VALUES ('Zumba',58);
-INSERT INTO Leciona VALUES ('Zumba',60);
-INSERT INTO Leciona VALUES ('Soul Cycle', 59);
-INSERT INTO Leciona VALUES ('Body Training', 61);
+
+INSERT INTO Contrato VALUES (51, 30, 'mensal', 96);
+INSERT INTO Contrato VALUES (52, 50, 'mensal', 97);
+INSERT INTO Contrato VALUES (53, 840, 'anual', 98);
+
+INSERT INTO Equipamento VALUES (1, 'passadeira', 'esculpir pernas; aumentar resistencia', 0, 201, 'Grifo');
+INSERT INTO Equipamento VALUES (2, 'passadeira', 'esculpir pernas; aumentar resistencia', 1, 201, 'Grifo');
+INSERT INTO Equipamento VALUES (3, 'passadeira', 'esculpir pernas; aumentar resistencia', 1, 201, 'Fashion Gym');
+INSERT INTO Equipamento VALUES (4, 'passadeira', 'esculpir pernas; aumentar resistencia', 1, 201, 'Fashion Gym');
+INSERT INTO Equipamento VALUES (5, 'passadeira', 'esculpir pernas; aumentar resistencia', 1, 201, 'Fashion Gym');
+INSERT INTO Equipamento VALUES (6, 'passadeira', 'esculpir pernas; aumentar resistencia', 0, 201, 'Blue Gym');
+INSERT INTO Equipamento VALUES (7, 'eliptica', 'esculpir pernas', 1, 202, 'Grifo');
+INSERT INTO Equipamento VALUES (8, 'eliptica', 'esculpir pernas', 0, 202, 'Grifo');
+INSERT INTO Equipamento VALUES (9, 'eliptica', 'esculpir pernas', 1, 202, 'Grifo');
+INSERT INTO Equipamento VALUES (10, 'eliptica', 'esculpir pernas', 0, 202, 'Fashion Gym');
+INSERT INTO Equipamento VALUES (11, 'eliptica', 'esculpir pernas', 1, 202, 'Fashion Gym');
+INSERT INTO Equipamento VALUES (12, 'eliptica', 'esculpir pernas', 1, 202, 'Fashion Gym');
+INSERT INTO Equipamento VALUES (13, 'eliptica', 'esculpir pernas', 1, 201, 'Blue Gym');
+INSERT INTO Equipamento VALUES (14, 'eliptica', 'esculpir pernas', 1, 201, 'Blue Gym');
+
+INSERT INTO Leciona VALUES ('Zumba',91,'Grifo',58);
+INSERT INTO Leciona VALUES ('Zumba',92,'Grifo',59);
+INSERT INTO Leciona VALUES ('Body Training', 95, 'Blue Gym',60);
+INSERT INTO Leciona VALUES ('Body Training', 94, 'Fashion Gym',61);

@@ -83,25 +83,37 @@ CREATE TABLE Sala (
 			PRIMARY KEY(numero, nomeGinasio));
 
 CREATE TABLE Modalidade (
-			nome STRING PRIMARY KEY UNIQUE NOT NULL,
+			nome STRING NOT NULL,
 			idHorario INT REFERENCES Horario (id),
-			numeroSala INT REFERENCES Sala (numero),
-			nomeGinasio STRING REFERENCES Ginasio (nome));
+			numeroSala INT,
+			nomeGinasio STRING,
+			FOREIGN KEY ( numeroSala, nomeGinasio ) REFERENCES Sala( numero, nomeGinasio ),
+			PRIMARY KEY(nome, idHorario, nomeGinasio)
+			);
 
 CREATE TABLE Contrato (
 			idMembro INT PRIMARY KEY REFERENCES Membro (idMembro) NOT NULL,
 			pagamento INT CHECK (pagamento>0),
 			regime STRING CHECK (regime IN ('mensal','anual')),
-			idHorario INT REFERENCES Horario (id) NOT NULL);
+			idHorario INT REFERENCES Horario (id) NOT NULL
+			);
 
 CREATE TABLE Equipamento (
 			id INT PRIMARY KEY UNIQUE,
 			nome STRING NOT NULL,
 			funcionalidade STRING,
 			disponivel BOOLEAN,
-			numeroSala INT REFERENCES Sala (numero),
-			nomeGinasio STRING REFERENCES Ginasio (nome));
+			numeroSala INT,
+			nomeGinasio STRING,
+			FOREIGN KEY ( numeroSala, nomeGinasio ) REFERENCES Sala( numero, nomeGinasio )
+			);
 
 CREATE TABLE Leciona (
-			nomeModalidade STRING REFERENCES Modalidade (nome),
-			idProfessor INT PRIMARY KEY REFERENCES Professor (idProfessor));
+			modalidade STRING NOT NULL,
+			horario INT,
+			Ginasio STRING,
+			Professor INT,
+			FOREIGN KEY (modalidade, horario, Ginasio) REFERENCES Modalidade (nome, idHorario,nomeGinasio),
+			FOREIGN KEY (Professor) REFERENCES Professor (idProfessor),
+			PRIMARY KEY(Professor)
+			);
