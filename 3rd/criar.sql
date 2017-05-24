@@ -83,12 +83,7 @@ CREATE TABLE Sala (
 			PRIMARY KEY(numero, nomeGinasio));
 
 CREATE TABLE Modalidade (
-			nome STRING NOT NULL,
-			idHorario INT REFERENCES Horario (id),
-			numeroSala INT,
-			nomeGinasio STRING,
-			FOREIGN KEY ( numeroSala, nomeGinasio ) REFERENCES Sala( numero, nomeGinasio ),
-			PRIMARY KEY(nome, idHorario, nomeGinasio)
+			nome STRING PRIMARY KEY,
 			);
 
 CREATE TABLE Contrato (
@@ -110,10 +105,10 @@ CREATE TABLE Equipamento (
 
 CREATE TABLE Leciona (
 			modalidade STRING NOT NULL,
-			horario INT,
-			Ginasio STRING,
-			Professor INT,
-			FOREIGN KEY (modalidade, horario, Ginasio) REFERENCES Modalidade (nome, idHorario,nomeGinasio),
-			FOREIGN KEY (Professor) REFERENCES Professor (idProfessor),
-			PRIMARY KEY(Professor)
+			Professor INT NOT NULL,
+			);
+
+CREATE TABLE TemLugar (
+			nomeModalidade STRING REFERENCES Modalidade (nome) NOT NULL
+			numeroSala INT REFERENCES Sala (numero) NOT NULL
 			);
