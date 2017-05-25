@@ -28,7 +28,6 @@ CREATE TABLE Pessoa (
 			BI INT CHECK (BI BETWEEN 10000000 AND 99999999),
 			contribuinte INT CHECK (contribuinte BETWEEN 100000000 AND 999999999),
 			morada STRING,
-			codigopostal STRING,
 			telemovel INT CHECK ((telemovel BETWEEN 910000000 AND 939999999) OR (telemovel BETWEEN 960000000 AND 969999999)));
 
 CREATE TABLE Membro (
@@ -64,22 +63,19 @@ CREATE TABLE Horario (
 CREATE TABLE Ginasio (	
 			nome STRING PRIMARY KEY,
 			morada STRING,
-			codigopostal STRING,
 			telefone INT CHECK (telefone BETWEEN 200000000 AND 299999999));
 
 CREATE TABLE Balneario (
-			numero INT,
+			numero INT PRIMARY KEY,
 			genero STRING CHECK (genero IN ('masculino', 'feminino')),
 			lotacaomax INT CHECK (lotacaomax > 0),
-			lotacaoatual INT CHECK (lotacaoatual >= 0 AND lotacaoatual<=lotacaomax),
-			PRIMARY KEY(numero));
+			lotacaoatual INT CHECK (lotacaoatual >= 0 AND lotacaoatual<=lotacaomax));
 
 CREATE TABLE Sala (	
-			numero INT,
+			numero INT PRIMARY KEY,
 			dimensao INT CHECK (dimensao > 0),
 			lotacaomax INT CHECK (lotacaomax > 0),
-			lotacaoatual INT CHECK (lotacaoatual >= 0 AND lotacaoatual<=lotacaomax),
-			PRIMARY KEY(numero));
+			lotacaoatual INT CHECK (lotacaoatual >= 0 AND lotacaoatual<=lotacaomax));
 
 CREATE TABLE Modalidade (
 			nome STRING PRIMARY KEY,
@@ -89,18 +85,13 @@ CREATE TABLE Contrato (
 			idMembro INT PRIMARY KEY REFERENCES Membro (idMembro),
 			pagamento INT CHECK (pagamento>0),
 			regime STRING CHECK (regime IN ('mensal','anual')),
-			idHorario INT REFERENCES Horario (id) NOT NULL
 			);
 
 CREATE TABLE Equipamento (
 			id INT PRIMARY KEY,
 			nome STRING NOT NULL,
 			funcionalidade STRING,
-			disponivel BOOLEAN,
-			numeroSala INT,
-			nomeGinasio STRING,
-			FOREIGN KEY ( numeroSala, nomeGinasio ) REFERENCES Sala( numero, nomeGinasio )
-			);
+			disponivel BOOLEAN);
 
 CREATE TABLE Leciona (
 			modalidade STRING NOT NULL,
