@@ -126,3 +126,6 @@ SELECT ' ';
 SELECT id AS [ID], dia AS [Dia] FROM Horario
 WHERE dia <> '%Sexta%' AND dia <> '%Segunda%'
 ORDER BY id ASC;
+
+SELECT '**************************';
+SELECT ' ';
