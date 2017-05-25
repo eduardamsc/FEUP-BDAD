@@ -10,19 +10,22 @@ WHERE id IN (SELECT id FROM
 SELECT '**************************';
 SELECT ' ';
 
---2.Selecionar membros com idade inferior a 20
+--2.Selecionar membros com idade inferior a 20 ordenados por idade, e por ordem alfabetica
 SELECT '**************************';
 SELECT '2.Selecionar membros com idade inferior a 20';
 SELECT ' ';
 
-SELECT * FROM Pessoa 
+SELECT id AS [ID], nome AS [Nome], idade AS [Idade]  FROM Pessoa 
 WHERE idade <20 AND id IN (SELECT id FROM
-(SELECT * FROM Membro));
+(SELECT idMembro FROM Membro))
+ORDER BY
+	idade DESC,
+	nome ASC;
 
 SELECT '**************************';
 SELECT ' ';
 
---3.Ordenar os 10 contratos anuais por pagamento descrescente
+--3.Ordenar os 10 contratos anuais por ordem de pagamento descrescente
 SELECT '**************************';
 SELECT '3.Selecionar os 10 contratos anuais com maior pagamento';
 SELECT ' ';
@@ -31,7 +34,8 @@ SELECT TOP 10 WITH TIES pagamento
 FROM Contrato
 WHERE 
 Contrato.regime=[anual] 
-ORDER BY pagamento DESC
+ORDER BY pagamento DESC;
+
 SELECT '**************************';
 SELECT ' ';
 
@@ -43,6 +47,7 @@ SELECT ' ';
 SELECT AVG(idade) FROM Pessoa 
 WHERE id IN (SELECT id FROM
 (SELECT * FROM Treinador)) AND Funcionario.salario > 500;
+
 SELECT '**************************';
 SELECT ' ';
 
@@ -78,4 +83,46 @@ AND Pessoa.nome = 'Bruno Florencio';
 SELECT '**************************';
 SELECT ' ';
 
+--7.Selecionar as salas que teem lotacao maxima, ordenadas por numero
+SELECT '**************************';
+SELECT '7.Selecionar as salas por ordem crescente de equipamento'
+SELECT ' ';
 
+SELECT numero FROM Sala
+WHERE Sala.lotacaomax = Sala.lotacaoatual
+ORDER BY numero ASC;
+
+SELECT '**************************';
+SELECT ' ';
+
+--8.Selecionar equipamento disponivel, cuja funcionalidade contenha a string 'esculpir', ordenados por ID
+SELECT '**************************';
+SELECT '8.Selecionar equipamento disponivel, cuja funcionalidade seja esculpir'
+SELECT ' ';
+
+SELECT id AS [ID], Equipamento.nome AS[Equipamento], Ginasio.nome AS [Ginasio] FROM Equipamento, Ginasio
+WHERE Equipamento.funcionalidade LIKE '%esculpir%' AND Equipamento.disponibilidade = 1
+ORDER BY id DESC;
+
+SELECT '**************************';
+SELECT ' ';
+
+--9.Selecionar os funcionarios cujo nome comeca por M ou N, ordenados por ordem alfabetica
+SELECT '**************************';
+SELECT '9.Selecionar os funcionarios cujo nome comeca por M'
+SELECT ' ';
+
+SELECT id AS [ID], nome AS [Nome] FROM Funcionario
+WHERE Funcionario.nome LIKE 'M%' OR Funcionario.nome LIKE 'D%'
+ORDER BY Funcionario.nome ASC;
+SELECT '**************************';
+SELECT ' ';
+
+--10.Selecionar os horarios que nao sao ha sexta-feira, ordenados por ID
+SELECT '**************************';
+SELECT '10.Selecionar os horarios que nao sao ha sexta-feira nem ha segunda-feira, ordenados por ID'
+SELECT ' ';
+
+SELECT id AS [ID], dia AS [Dia] FROM Horario
+WHERE dia <> '%Sexta%' AND dia <> '%Segunda%'
+ORDER BY id ASC;
