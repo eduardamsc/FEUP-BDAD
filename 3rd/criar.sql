@@ -18,6 +18,7 @@ DROP TABLE IF EXISTS Modalidade;
 DROP TABLE IF EXISTS Contrato;
 DROP TABLE IF EXISTS Equipamento;
 DROP TABLE IF EXISTS Leciona;
+DROP TABLE IF EXISTS TemLugar;
 
 
 CREATE TABLE Pessoa (
@@ -68,19 +69,17 @@ CREATE TABLE Ginasio (
 
 CREATE TABLE Balneario (
 			numero INT,
-			nomeGinasio STRING REFERENCES Ginasio (nome) NOT NULL,
 			genero STRING CHECK (genero IN ('masculino', 'feminino')),
 			lotacaomax INT CHECK (lotacaomax > 0),
 			lotacaoatual INT CHECK (lotacaoatual >= 0 AND lotacaoatual<=lotacaomax),
-			PRIMARY KEY(numero, nomeGinasio));
+			PRIMARY KEY(numero));
 
 CREATE TABLE Sala (	
 			numero INT,
-			nomeGinasio STRING REFERENCES Ginasio (nome) NOT NULL,
 			dimensao INT CHECK (dimensao > 0),
 			lotacaomax INT CHECK (lotacaomax > 0),
 			lotacaoatual INT CHECK (lotacaoatual >= 0 AND lotacaoatual<=lotacaomax),
-			PRIMARY KEY(numero, nomeGinasio));
+			PRIMARY KEY(numero));
 
 CREATE TABLE Modalidade (
 			nome STRING PRIMARY KEY,

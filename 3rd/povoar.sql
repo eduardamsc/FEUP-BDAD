@@ -70,12 +70,12 @@ INSERT INTO Balneario VALUES (2, 'Fashion Gym', 'feminino', 12, 3);
 INSERT INTO Balneario VALUES (1, 'Blue Gym', 'masculino', 10, 9);
 INSERT INTO Balneario VALUES (2, 'Blue Gym', 'feminino', 10, 6);
 
-INSERT INTO Sala VALUES (201, 'Grifo', 100, 15, 12);
-INSERT INTO Sala VALUES (202, 'Grifo', 50, 15, 10);
-INSERT INTO Sala VALUES (201, 'Fashion Gym', 90, 12, 3);
-INSERT INTO Sala VALUES (202, 'Fashion Gym', 90, 12, 5);
-INSERT INTO Sala VALUES (203, 'Fashion Gym', 90, 12, 0);
-INSERT INTO Sala VALUES (201, 'Blue Gym', 90, 10, 9);
+INSERT INTO Sala VALUES (201, 100, 15, 12);
+INSERT INTO Sala VALUES (202, 50, 15, 10);
+INSERT INTO Sala VALUES (201, 90, 12, 3);
+INSERT INTO Sala VALUES (202, 90, 12, 5);
+INSERT INTO Sala VALUES (203, 90, 12, 0);
+INSERT INTO Sala VALUES (201, 90, 10, 9);
 
 INSERT INTO Modalidade VALUES ('Zumba', 91, 201, 'Grifo');
 INSERT INTO Modalidade VALUES ('Zumba', 92, 201, 'Grifo');
