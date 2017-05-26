@@ -1,5 +1,5 @@
---1.Numero de Socios
-SELECT '**************************';
+/* 1 - Numero de Membros*/
+SELECT '*************************';
 SELECT '1.Quantos membros existem';
 SELECT ' ';
 
@@ -10,7 +10,7 @@ WHERE id IN (SELECT id FROM
 SELECT '**************************';
 SELECT ' ';
 
---2.Selecionar membros com idade inferior a 20 ordenados por idade, e por ordem alfabetica
+/* 2 - Selecionar membros com idade inferior a 20 ordenados por idade, e por ordem alfabetica*/
 SELECT '**************************';
 SELECT '2.Selecionar membros com idade inferior a 20';
 SELECT ' ';
@@ -25,7 +25,7 @@ ORDER BY
 SELECT '**************************';
 SELECT ' ';
 
---3.Ordenar os 10 contratos anuais por ordem de pagamento descrescente
+/* 3 - Ordenar os 10 contratos anuais por ordem de pagamento descrescente*/
 SELECT '**************************';
 SELECT '3.Selecionar os 10 contratos anuais com maior pagamento';
 SELECT ' ';
@@ -39,19 +39,19 @@ ORDER BY pagamento DESC;
 SELECT '**************************';
 SELECT ' ';
 
---4.Idade media dos treinadores que teem salario superior a 500
+/* 4 -Idade media dos treinadores que teem salario superior a 1000*/
 SELECT '**************************';
-SELECT '4.Idade media dos treinadores cujo salario e superior a 500 euros';
+SELECT '4.Idade media dos treinadores cujo salario e superior a 1000 euros';
 SELECT ' ';
 
 SELECT AVG(idade) FROM Pessoa 
 WHERE id IN (SELECT id FROM
-(SELECT * FROM Treinador)) AND Funcionario.salario > 500;
+(SELECT * FROM Treinador)) AND Funcionario.salario > 1000;
 
 SELECT '**************************';
 SELECT ' ';
 
---5.Selecionar todos os socios e treinadores
+/* 5 - Selecionar todos os socios e treinadores*/
 SELECT '**************************';
 SELECT '5.Selecionar todos os Membros e Professores';
 SELECT ' ';
@@ -65,7 +65,7 @@ WHERE Pessoa.idPessoa = Treinador.idTreinador;
 SELECT '**************************';
 SELECT ' ';
 
---6.Seleciona id do Gerente Bruno Florenco
+/* 6 - Seleciona id do Gerente Bruno Florenco*/
 SELECT '**************************';
 SELECT '6.Qual e o id do Gerente Bruno Florencio'
 SELECT ' ';
@@ -83,7 +83,7 @@ AND Pessoa.nome = 'Bruno Florencio';
 SELECT '**************************';
 SELECT ' ';
 
---7.Selecionar as salas que teem lotacao maxima, ordenadas por numero
+/* 7 - Selecionar as salas que teem lotacao maxima, ordenadas por numero*/
 SELECT '**************************';
 SELECT '7.Selecionar as salas por ordem crescente de equipamento'
 SELECT ' ';
@@ -95,7 +95,7 @@ ORDER BY numero ASC;
 SELECT '**************************';
 SELECT ' ';
 
---8.Selecionar equipamento disponivel, cuja funcionalidade contenha a string 'esculpir', ordenados por ID
+/* 8 - Selecionar equipamento disponivel, cuja funcionalidade contenha a string 'esculpir', ordenados por ID*/
 SELECT '**************************';
 SELECT '8.Selecionar equipamento disponivel, cuja funcionalidade seja esculpir'
 SELECT ' ';
@@ -107,7 +107,7 @@ ORDER BY id DESC;
 SELECT '**************************';
 SELECT ' ';
 
---9.Selecionar os funcionarios cujo nome comeca por M ou N, ordenados por ordem alfabetica
+/* 9 - Selecionar os funcionarios cujo nome comeca por M ou N, ordenados por ordem alfabetica */
 SELECT '**************************';
 SELECT '9.Selecionar os funcionarios cujo nome comeca por M'
 SELECT ' ';
@@ -118,7 +118,7 @@ ORDER BY Funcionario.nome ASC;
 SELECT '**************************';
 SELECT ' ';
 
---10.Selecionar os horarios que nao sao ha sexta-feira, ordenados por ID
+/* 10 - Selecionar os horarios que nao sao ha sexta-feira, ordenados por ID*/
 SELECT '**************************';
 SELECT '10.Selecionar os horarios que nao sao ha sexta-feira nem ha segunda-feira, ordenados por ID'
 SELECT ' ';
