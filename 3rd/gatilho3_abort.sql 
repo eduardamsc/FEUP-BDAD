@@ -1,0 +1,9 @@
+/*Se qualquer funcionario ao ser criado tiver um salario inferior ao salario minimo ocorre um ABORT*/
+CREATE TRIGGER MinSalary
+BEFORE INSERT ON Funcionario
+FOR EACH ROW
+BEGIN
+	SELECT CASE 
+		WHEN NEW.salario <= 557
+	THEN RAISE(ABORT, 'Abaixo do salario minimo!!!');
+END;
