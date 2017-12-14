@@ -8,4 +8,4 @@ João Miguel Matos Monteiro | up201506130@fe.up.pt
 Maria Eduarda Santos Cunha | up201506524@fe.up.pt
 Mário Rui Macedo Flores dos Santos | up201503406@fe.up.pt
 
-Code developped BDAD (Data Base).
+Code developped Data Base (BDAD).
